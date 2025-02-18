@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
-import BookCover from "@/BookCover";
+import BookCover from "@/components/BookCover";
 
 const BookOverview = ({
   title,
@@ -50,9 +50,16 @@ const BookOverview = ({
               variant="wide"
               className="z-10"
               coverColor={coverColor}
-              coverImage={coverUrl}
+              coverUrl={coverUrl}
             />
-          </div>{" "}
+          </div>
+          <div className="absolute left-16 top10 rotate-12 opacity-40">
+            <BookCover
+              variant="wide"
+              coverColor={coverColor}
+              coverUrl={coverUrl}
+            />
+          </div>
         </div>
       </div>
     </section>
