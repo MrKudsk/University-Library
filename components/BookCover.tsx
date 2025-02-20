@@ -3,6 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import BookCoverSvg from "./BookCoverSvg";
 
 type BookCoverVariant = "extraSmall" | "small" | "medium" | "regular" | "wide";
 
@@ -16,7 +17,7 @@ const variantStyles: Record<BookCoverVariant, string> = {
 
 interface Props {
   className?: string;
-  variant?: "wide" | "small" | "regular";
+  variant?: BookCoverVariant;
   coverColor: string;
   coverUrl: string;
 }
@@ -35,7 +36,7 @@ const BookCover = ({
         className,
       )}
     >
-      BookCover
+      <BookCoverSvg coverColor={coverColor} />
       <div
         className="absolute z-10"
         style={{ left: "12%", width: "87.5%", height: "88%" }}
